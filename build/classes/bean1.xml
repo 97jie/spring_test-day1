@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:myns="http://www.mycompany.com/schema/myns"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.mycompany.com/schema/myns http://www.mycompany.com/schema/myns/myns.xsd">
+  
+  <bean id="user" class="ioc.User">
+  	<property name="username" value="xiandi"></property>
+  </bean>  
+  
+  <bean id="userDao" class="ioc.UserDao"></bean>
+  <bean id="userService" class="ioc.UserService"><property name="userDao" ref="userDao"></property></bean>         
+
+	<bean id="person" class="ioc.Person">
+	<property name="str1">
+		<list>
+			<value>xiao</value>
+			<value>da</value>
+			<value>dsong</value>
+		</list>
+	</property>
+	
+	<property name="list">
+		<list>
+			<value>xxx</value>
+			<value>sda</value>
+			<value>fsad</value>
+		</list>
+	</property>
+	
+	<property name="map">
+		<map>
+			<entry key="" value=""></entry>
+			<entry key="" value=""></entry>
+			<entry key="" value=""></entry>
+		</map>
+	</property>
+	
+	<property name="properties">
+		<props>
+			<prop key="driverclass">com.mysql.jdbc.Driver</prop>
+			<prop key="username">root</prop>
+		</props>
+	</property>
+	
+	</bean>
+
+</beans>
